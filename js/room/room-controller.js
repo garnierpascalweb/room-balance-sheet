@@ -9,7 +9,8 @@
         // Des attributs
         vm.tab={};
         vm.tab.items=RoomService.getTabItems();
-        
+        // Some services
+        vm.onChangeTabItem = onChangeTabItem;
         vm.myjson = AppService.load();
         vm.mymap = AppService.toMap();
         vm.myvalue = vm.mymap.get(2019);
@@ -18,6 +19,10 @@
 
         function getYearsArray(){
             return RoomService.getYearsArray();
+        }
+
+        function onChangeTabItem(value){
+            $log.info("onChangeTabItem on " + value);
         }
     }
     

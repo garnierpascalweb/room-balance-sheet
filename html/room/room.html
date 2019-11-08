@@ -4,7 +4,7 @@
 <div class="container">
     <ul class="nav nav-tabs">
         <li ng-repeat="item in vm.tab.items">
-            <a href="#">{{item}}</a>
+            <a href="#" ng-click="vm.onChangeTabItem(item)" >{{item}}</a>
         </li>
     </ul>
     <div class="row">
@@ -25,10 +25,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
-            {{vm.years}}
-            <canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series"></canvas>
-            debut Map |{{vm.mymap}}| fin Map value {{vm.myvalue}}
+        <div class="col-sm-12">           
+            <canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series"></canvas>      
         </div>
     </div>
 </div>
