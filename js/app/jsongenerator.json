@@ -1,0 +1,15 @@
+[
+  '{{repeat(5, 150)}}',
+  {
+    checkin: '{{date(new Date(2013, 0, 1),new Date(2013, 6, 1), "YYYY-MM-dd")}}',
+    checkout: '{{date(new Date(2013, 6, 1),new Date(2013, 11, 1), "YYYY-MM-dd")}}',
+    price: '{{integer(100, 500)}}',
+    platform: '{{random("AirBnb", "Le Bon Coin", "Connaissance")}}',
+    guest:{
+      name: '{{firstName()}}',
+      email: '{{email()}}',
+      phone: '{{phone()}}',
+      country: '{{country(true)}}'      
+    }
+  }
+]

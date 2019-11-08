@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+            <div id="container">
+  
+</html>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Room Balance Sheet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Room Breguieres</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        {{vm.years}}
+        <canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series"></canvas>            
+        debut Map |{{vm.mymap}}| fin Map
+        value {{vm.myvalue}}
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
