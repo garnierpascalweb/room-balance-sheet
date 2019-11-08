@@ -9,24 +9,22 @@
     </ul>
     <div class="row">
         <div class="col-sm-4">
-            <h3>Column 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <h3>{{vm.season.price}} euros</h3>
+            <p></p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
         <div class="col-sm-4">
-            <h3>Column 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <h3>{{vm.season.nbguests}} séjours</h3>
+            <p>Durée moyenne de séjour</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
         <div class="col-sm-4">
-            <h3>Column 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            <h3>{{vm.season.nbnights}} nuitées</h3>            
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">           
-            <canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series"></canvas>      
+            <canvas id="bar" class="chart chart-bar" chart-data="vm.season.chart.months.data" chart-labels="vm.season.chart.months.labels" chart-series="vm.season.chart.months.series"></canvas>      
         </div>
     </div>
 </div>
