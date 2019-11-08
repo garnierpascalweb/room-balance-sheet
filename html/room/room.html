@@ -16,11 +16,15 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1>Room Breguieres</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+  <h3>Room Breguieres</h3>
 </div>
   
 <div class="container">
+
+        <ul class="nav nav-tabs">
+                <li ng-repeat="item in vm.tab.items" ><a href="#">{{item}}</a></li>               
+        </ul>
+
   <div class="row">
     <div class="col-sm-4">
       <h3>Column 1</h3>

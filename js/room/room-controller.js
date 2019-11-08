@@ -7,13 +7,9 @@
     function RoomController($log, $location, RoomService, AppService, TripService) {
         var vm = this;       
         // Des attributs
-        vm.years = [];       
-        vm.years = getYearsArray();
-
-        vm.labels = getYearsArray();
-        vm.series = ['Serie'];
-        vm.data = [500,600,800,541,541,684];
-
+        vm.tab={};
+        vm.tab.items=RoomService.getTabItems();
+        
         vm.myjson = AppService.load();
         vm.mymap = AppService.toMap();
         vm.myvalue = vm.mymap.get(2019);

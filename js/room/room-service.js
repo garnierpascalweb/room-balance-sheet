@@ -5,15 +5,17 @@
     RoomService.$inject = ['$log', '$http'];
     function RoomService($log, $http) {
          var service = {};       
-         service.getYearsArray = getYearsArray;        
+         service.getTabItems = getTabItems;        
+         
  
-         function getYearsArray(){           
+         function getTabItems(){           
             var currentYear = new Date().getFullYear(), years = [];
-            var startYear = 2013;  
+            var startYear = 2013;
+            years.push('Home');       
             while ( startYear <= currentYear ) {
                 years.push(startYear++);
-            }   
-            return years.reverse();    
+            }                              
+            return years;    
          }
         
          // returning object that can be used by the controller.
