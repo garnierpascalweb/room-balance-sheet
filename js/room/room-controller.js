@@ -14,14 +14,14 @@
         vm.season.year=2019;
         vm.season.nbguests=15;
         vm.season.nbnights=77;
-        vm.season.price=3584;
-        vm.season.avgprice=vm.season.price/vm.season.nbnights;
-        vm.season.chart={};
-        vm.season.chart.months={};
-        vm.season.chart.months.labels=['Jun', 'Jui', 'Aug', 'Sep', 'Oct'];
-        vm.season.chart.months.data=[[65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]];
-        vm.season.chart.months.series=['Prix total', 'Nuitees'];
+        vm.season.price={};
+        vm.season.price.sum=3587;
+        vm.season.price.avg=42;       
+        //vm.season.chart={};
+        //vm.season.chart.months={};
+        //vm.season.chart.months.labels=['Jun', 'Jui', 'Aug', 'Sep', 'Oct'];
+        //vm.season.chart.months.data=[[65, 59, 80, 81, 56, 55, 40],   [28, 48, 40, 19, 86, 27, 90]];
+        //vm.season.chart.months.series=['Prix total', 'Nuitees'];
         // Some services
         vm.onChangeTabItem = onChangeTabItem;
         vm.myjson = AppService.load();
@@ -36,6 +36,7 @@
 
         function onChangeTabItem(value){
             $log.info("onChangeTabItem on " + value);
+            RoomService.switchYear(value);
         }
     }
     

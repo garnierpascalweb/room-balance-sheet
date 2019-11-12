@@ -7,6 +7,7 @@
         var service = {};
         // Some services
         service.getTabItems = getTabItems;
+        service.switchYear = switchYear;
 
         /**
          * Items for tabs
@@ -19,6 +20,13 @@
                 years.push(startYear++);
             }
             return years;
+        }
+
+        /**
+         * Called when switch year
+         */
+        function switchYear(year){
+            $log.info("switch year " + year);
         }
 
         // returning object that can be used by the controller.
