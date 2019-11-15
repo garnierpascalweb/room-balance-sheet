@@ -5,22 +5,48 @@
     TripService.$inject = ['$log', '$http'];
     function TripService($log, $http) {
          var service = {};       
+         service.getPrice = getPrice;
+         service.getDuration = getDuration;
+         service.getCheckIn=getCheckIn;
+         service.getCheckOut=getCheckOut;
+         service.getMonthCheckIn = getMonthCheckIn;
+         service.getMonthCheckOut = getMonthCheckOut;
 
-         // methodes
-         service.getNbDays = getNbDays;
-
-         /**
-          * Get days between 2 dates
-          * @param {*} date1 
-          * @param {*} date2 
-          */
-         function getNbDays(date1,date2){
-            var checkin = new Date(date1);
-            var checkout = new Date(date2);
-            var tempsEcoule = checkout.getTime() - checkin.getTime();
-            var days = tempsEcoule / 86400000;
-            return days;
+         function getPrice(trip){
+            return trip.price;
          }
+
+         function getDuration(trip){
+            var checkin = new Date(trip.checkin);
+            var checkout = new Date(trip.checkout);
+            // var price = trip.price;
+            // var platform = trip.platform;               
+            var diffTime = checkout.getTime() - checkin.getTime();  
+            var duration = diffTime / (1000 * 3600 * 24); 
+            return duration;
+         }        
+
+         function getCheckIn(trip){
+            var checkin = new Date(trip.checkin);
+            return checkin;
+         }
+
+         function getCheckOut(trip){
+            var checkout = new Date(trip.checkout);
+            return checkout;
+         }
+
+        function getMonthCheckIn(trip){
+            var checkin = new Date(trip.checkin);
+            var month = checkin.getMonth();
+            return month;
+        }
+
+        function getMonthCheckOut(trip){
+            var checkout = new Date(trip.checkout);
+            var month = checkout.getMonth();
+            return month;
+        }
          
          return service;
     }
