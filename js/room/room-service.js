@@ -27,13 +27,7 @@
          */
         function switchYear(year) {
             $log.info("switch year " + year);                      
-            var trips = [
-                {
-                    "checkin": "2019-02-11",
-                    "checkout": "2019-05-16",
-                    "price": 2561,
-                    "platform": "Retour"
-                },
+            var trips = [                
                 {
                     "checkin": "2019-07-06",
                     "checkout": "2019-07-16",

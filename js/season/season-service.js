@@ -2,8 +2,8 @@
     'use strict'; //NOSONAR
     ng.module('season')
     .service('SeasonService', SeasonService);
-    SeasonService.$inject = ['$log', '$http', 'TripService'];
-    function SeasonService($log, $http, TripService) {
+    SeasonService.$inject = ['$log', '$http', 'TripService', 'UtilsService'];
+    function SeasonService($log, $http, TripService,UtilsService) {
         var service = {};       
         service.getSeason=getSeason;
         service.getProrata = getProrata;
@@ -84,7 +84,11 @@
             $log.info("affichage map " + priceByMonthMap.size);
             for (const entry of priceByMonthMap.entries()) {
                 $log.info(entry);
+                $log.info(UtilsService.getMonthName(priceByMonthMap[entry]));
               }
+            season.price.chart={};
+            season.price.chart.labels=Array.from(priceByMonthMap.keys());
+            season.price.chart.series=Array.from(priceByMonthMap.values());
             $log.info("fin affichage map " + priceByMonthMap.size);
             
             return season;

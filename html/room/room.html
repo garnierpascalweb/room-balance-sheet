@@ -4,7 +4,7 @@
 <div class="container">
     <ul class="nav nav-tabs">
         <li ng-repeat="item in vm.tab.items">
-            <a href="#" ng-click="vm.onChangeTabItem(item)" >{{item}}</a>
+            <a href="#" ng-click="vm.onChangeTabItem(item)">{{item}}</a>
         </li>
     </ul>
     <div class="row">
@@ -19,13 +19,15 @@
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
         <div class="col-sm-4">
-            <h3>{{vm.season.nbnights}} nuitées</h3>            
+            <h3>{{vm.season.nbnights}} nuitées</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">           
-           <!-- <canvas id="bar" class="chart chart-bar" chart-data="vm.season.chart.months.data" chart-labels="vm.season.chart.months.labels" chart-series="vm.season.chart.months.series"></canvas>      -->
+        <div class="col-sm-2"></div>
+        <div class="col-sm-12">
+            <canvas id="pie" class="chart chart-pie" chart-data="vm.season.price.chart.series" chart-labels="vm.season.price.chart.labels"></canvas>
         </div>
+        <div class="col-sm-2"></div>
     </div>
 
     <pre>{{vm.season | json }}</pre>
