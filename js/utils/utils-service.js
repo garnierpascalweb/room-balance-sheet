@@ -6,18 +6,18 @@
     function UtilsService($log) {
         var service = {};
         var monthArray = new Array();
-        monthArray[0] = "Janvier";
-        monthArray[1] = "Fevrier";
-        monthArray[2] = "Mars";
-        monthArray[3] = "Avril";
-        monthArray[4] = "Mai";
-        monthArray[5] = "Juin";
-        monthArray[6] = "Juillet";
-        monthArray[7] = "Aout";
-        monthArray[8] = "Septembre";
-        monthArray[9] = "Octobre";
-        monthArray[10] = "Novembre";
-        monthArray[11] = "Decembre";
+        monthArray[0] = "Jan";
+        monthArray[1] = "Fev";
+        monthArray[2] = "Mar";
+        monthArray[3] = "Avr";
+        monthArray[4] = "May";
+        monthArray[5] = "Jun";
+        monthArray[6] = "Jui";
+        monthArray[7] = "Aug";
+        monthArray[8] = "Sep";
+        monthArray[9] = "Oct";
+        monthArray[10] = "Nov";
+        monthArray[11] = "Dec";
         service.getMonthName=getMonthName;
 
         function getMonthName(number){

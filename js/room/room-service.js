@@ -29,53 +29,65 @@
             $log.info("switch year " + year);                      
             var trips = [                
                 {
-                    "checkin": "2019-07-06",
-                    "checkout": "2019-07-16",
-                    "price": 382,
+                    "checkin": "2017-06-24",
+                    "checkout": "2017-07-01",
+                    "price": 250,
+                    "platform": "Le Bon Coin"
+                  },
+                  {
+                    "checkin": "2017-07-17",
+                    "checkout": "2017-07-22",
+                    "price": 212,
+                    "platform": "Airbnb"
+                  },
+                  {
+                    "checkin": "2017-07-25",
+                    "checkout": "2017-07-30",
+                    "price": 262,
+                    "platform": "Airbnb"
+                  },
+                  {
+                    "checkin": "2017-07-30",
+                    "checkout": "2017-08-09",
+                    "price": 540,
+                    "platform": "Le Bon Coin"
+                  },
+                  {
+                    "checkin": "2017-08-10",
+                    "checkout": "2017-08-18",
+                    "price": 420,
                     "platform": "Retour"
-                },
-                {
-                    "checkin": "2019-07-16",
-                    "checkout": "2019-07-31",
-                    "price": 300,
-                    "platform": "Connaissance"
-                },
-                {
-                    "checkin": "2019-08-03",
-                    "checkout": "2019-08-17",
-                    "price": 824,
+                  },
+                  {
+                    "checkin": "2017-08-21",
+                    "checkout": "2017-08-25",
+                    "price": 179,
                     "platform": "Airbnb"
-                },
-                {
-                    "checkin": "2019-08-17",
-                    "checkout": "2019-09-14",
-                    "price": 1176,
+                  },
+                  {
+                    "checkin": "2017-08-25",
+                    "checkout": "2017-08-27",
+                    "price": 88,
                     "platform": "Airbnb"
-                },
-                {
-                    "checkin": "2019-09-17",
-                    "checkout": "2019-09-21",
-                    "price": 205,
+                  },
+                  {
+                    "checkin": "2017-09-03",
+                    "checkout": "2017-09-10",
+                    "price": 252,
                     "platform": "Airbnb"
-                },
-                {
-                    "checkin": "2019-09-21",
-                    "checkout": "2019-09-25",
-                    "price": 185,
+                  },
+                  {
+                    "checkin": "2017-09-10",
+                    "checkout": "2017-09-17",
+                    "price": 233,
                     "platform": "Airbnb"
-                },
-                {
-                    "checkin": "2019-09-26",
-                    "checkout": "2019-10-16",
-                    "price": 667,
+                  },
+                  {
+                    "checkin": "2017-09-20",
+                    "checkout": "2017-09-28",
+                    "price": 275,
                     "platform": "Airbnb"
-                },
-                {
-                    "checkin": "2019-10-23",
-                    "checkout": "2019-11-02",
-                    "price": 324,
-                    "platform": "Airbnb"
-                }
+                  }                 
             ];            
             var season = SeasonService.getSeason(year,trips);
             return season;

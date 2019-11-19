@@ -39,14 +39,15 @@
                
                 $log.info("allmonths entre " + monthCheckin + " et  " + monthCheckout + " cest " + allmonths);
                 if (monthCheckin === monthCheckout){
+                    var monthName = UtilsService.getMonthName(monthCheckin);
                     monthPrices[monthCheckin] = monthPrices[monthCheckin]+price;
-                    var priceForCurrentMonth = priceByMonthMap.get(monthCheckin);
+                    var priceForCurrentMonth = priceByMonthMap.get(monthName);
                     if (priceForCurrentMonth === undefined){
-                        priceByMonthMap.set(monthCheckin, price);
-                        $log.info("setting " + monthCheckin + " => " + price);
+                        priceByMonthMap.set(monthName, price);
+                        $log.info("setting " + monthName + " => " + price);
                     } else {
-                        priceByMonthMap.set(monthCheckin, priceForCurrentMonth+price);
-                        $log.info("setting " + monthCheckin + " => " + priceByMonthMap.get(monthCheckin));
+                        priceByMonthMap.set(monthName, priceForCurrentMonth+price);
+                        $log.info("setting " + monthName + " => " + priceByMonthMap.get(monthName));
                     }
                 } else {
                     var allmonths = getMonthRepartition(checkin, checkout);                   
@@ -54,14 +55,15 @@
 
                     for (var monthIndex = monthCheckin; monthIndex <= monthCheckout; monthIndex++) {
                         var nbj = allmonths.get(monthIndex);
+                        var monthName = UtilsService.getMonthName(monthIndex);
                         var theprice = tabProrata[nbj];
-                        var priceForCurrentMonth = priceByMonthMap.get(monthIndex);
+                        var priceForCurrentMonth = priceByMonthMap.get(monthName);
                         if (priceForCurrentMonth === undefined){
-                            priceByMonthMap.set(monthIndex, theprice);
-                            $log.info("setting " + monthIndex + " => " + theprice);
+                            priceByMonthMap.set(monthName, theprice);
+                            $log.info("setting " + monthName + " => " + theprice);
                         } else {
-                            priceByMonthMap.set(monthIndex, priceForCurrentMonth+theprice);
-                            $log.info("setting " + monthIndex + " => " + priceByMonthMap.get(monthIndex));
+                            priceByMonthMap.set(monthName, priceForCurrentMonth+theprice);
+                            $log.info("setting " + monthName + " => " + priceByMonthMap.get(monthName));
                         }
                     }
 
@@ -88,7 +90,9 @@
               }
             season.price.chart={};
             season.price.chart.labels=Array.from(priceByMonthMap.keys());
-            season.price.chart.series=Array.from(priceByMonthMap.values());
+            season.price.chart.series=[];
+            season.price.chart.series[0]="Oseille";
+            season.price.chart.data=Array.from(priceByMonthMap.values());
             $log.info("fin affichage map " + priceByMonthMap.size);
             
             return season;
@@ -136,6 +140,7 @@
             var mapKey = month1;
             for (var i = 0; i < months.length; i++) {
                 // copie.push(items[i]);
+
                 m.set(mapKey, months[i]);
                 mapKey++;
             }
