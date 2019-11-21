@@ -7,6 +7,7 @@
          var service = {};       
          service.getPrice = getPrice;
          service.getDuration = getDuration;
+         service.getAveragePrice = getAveragePrice;
          service.getCheckIn=getCheckIn;
          service.getCheckOut=getCheckOut;
          service.getMonthCheckIn = getMonthCheckIn;
@@ -24,7 +25,14 @@
             var diffTime = checkout.getTime() - checkin.getTime();  
             var duration = diffTime / (1000 * 3600 * 24); 
             return duration;
-         }        
+         }
+         
+         function getAveragePrice(trip){
+            var price = trip.price;
+            var duration = getDuration(trip);
+            var avgPrice = (price/duration).toFixed(2);
+            return avgPrice;
+         }
 
          function getCheckIn(trip){
             var checkin = new Date(trip.checkin);

@@ -29,8 +29,9 @@
     <div class="row">
         <div class="panel-group">
             <div class="panel panel panel-primary" ng-repeat="trip in vm.season.trips">
-                <div class="panel-heading"><span class="glyphicon glyphicon-calendar"></span>&nbsp;S&eacute;jour du {{trip.checkin | date:"dd/MM/yyyy"}} au {{trip.checkout | date:"dd/MM/yyyy"}} ({{vm.getTripDuration(trip)}} nuits)</div>
-                <div class="panel-body">Panel Content en flag <countryflag country="ae">France</countryflag>
+                <div class="panel-heading"><span class="glyphicon glyphicon-calendar"></span>&nbsp;S&eacute;jour du {{trip.checkin | date:"dd/MM/yyyy"}} au {{trip.checkout | date:"dd/MM/yyyy"}} - {{vm.getTripDuration(trip)}} nuits - {{trip.price}} &euro; ({{vm.getTripAveragePrice(trip)}} &euro; / n)   </div>
+                <div class="panel-body">
+                        <span class="glyphicon glyphicon-user"></span> Ouls Djoubani Rachid <countryflag country="ae">France</countryflag>
                   voir span  <span class="flag-icon flag-icon-ae"></span>
                 </div>
             </div>            

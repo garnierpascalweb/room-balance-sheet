@@ -15,6 +15,7 @@
         
         vm.onChangeTabItem = onChangeTabItem;
         vm.getTripDuration = getTripDuration;
+        vm.getTripAveragePrice = getTripAveragePrice;
         vm.getYearsArray = getYearsArray;        
 
         function getYearsArray(){
@@ -29,6 +30,10 @@
 
         function getTripDuration(trip){
             return TripService.getDuration(trip);
+        }
+
+        function getTripAveragePrice(trip){
+            return TripService.getAveragePrice(trip);
         }
     }
     
