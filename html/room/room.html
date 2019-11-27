@@ -1,6 +1,3 @@
-<div class="jumbotron text-center">
-    <h3>Room Breguieres</h3>
-</div>
 <div class="container">
     <ul class="nav nav-tabs">
         <li ng-repeat="item in vm.tab.items">
@@ -32,11 +29,12 @@
                 <div class="panel-heading"><span class="glyphicon glyphicon-calendar"></span>&nbsp;S&eacute;jour du {{trip.checkin | date:"dd/MM/yyyy"}} au {{trip.checkout | date:"dd/MM/yyyy"}} - {{vm.getTripDuration(trip)}} nuits - {{trip.price}} &euro; ({{vm.getTripAveragePrice(trip)}} &euro; / n)   </div>
                 <div class="panel-body">
                         <span class="glyphicon glyphicon-user"></span> Ouls Djoubani Rachid <countryflag country="ae">France</countryflag>
-                  voir span  <span class="flag-icon flag-icon-ae"></span>
+                  voir span  <span class="flag-icon flag-icon-ae"></span> fin voir span<br/>                 
                 </div>
             </div>            
         </div>
     </div>
     Flag <countryflag country="en" is-square="true">English <span class="caret"></span></countryflag>
     <pre>{{vm | json }}</pre>
+    
 </div>

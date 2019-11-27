@@ -22,7 +22,7 @@
          */
         function getSeasonJson(year) {
             // et si year vide ?
-            var uri = "localhost/api/trips/" + year;
+            var uri = "api/trips/" + year;
             return $http.get(uri);
         }
 
