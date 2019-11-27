@@ -10,19 +10,21 @@
     function AppService($log, $http, $location) {
         var service = {};
         // methodes
-       //  service.load = load;
-        service.toMap = toMap;
+        // service.load = load;
+        service.currentItem="";
+        service.setCurrentItem=setCurrentItem;
+        service.getCurrentItem=getCurrentItem;
+        
+        function getCurrentItem(){
+            $log.info("[app-service.js] get current item = " + service.currentItem);
+            return service.currentItem;
+        }
 
-        function toMap(){
-           var map = new Map();
-           map.set(2019, 'v1');
-           map.set(2018, 'v2');
-           map.set(2017, 'v3');
-           console.log('map de taille ' + map.size);
-           return map; 
-        }        
-        
-        
+        function setCurrentItem(incurrentItem){
+            $log.info("[app-service.js] set current item = " + incurrentItem);
+            service.currentItem=incurrentItem;
+        }
+
         return service;
     }
 } (angular));

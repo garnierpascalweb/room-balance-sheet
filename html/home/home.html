@@ -1,0 +1,7 @@
+<div class="container">
+    <tabset>
+        <tab ng-repeat="item in vm.tab.items" active="item.active" heading="{{item}}" select="vm.onChangeTabItem(item)">
+            {{item}}        
+        </tab>
+    </tabset>
+</div>

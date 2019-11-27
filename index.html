@@ -20,6 +20,9 @@
     <script src="js/app/app-module.js"></script>
     <script src="js/app/app-service.js"></script>
     <script src="js/app/app-route.js"></script>
+    <script src="js/nav/nav-module.js"></script>
+    <script src="js/nav/nav-controller.js"></script>
+    <script src="js/nav/nav-service.js"></script>
     <script src="js/room/room-module.js"></script>
     <script src="js/room/room-controller.js"></script>
     <script src="js/room/room-service.js"></script>
@@ -32,7 +35,8 @@
     
 </head>
 
-<body ng-app="app">
+<body ng-app="app">    
+    <div ui-view="header"></div>
     <div ui-view="content"></div>
 </body>
 

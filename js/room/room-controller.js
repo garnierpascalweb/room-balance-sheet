@@ -3,24 +3,18 @@
     ng.module('room')
     .controller('RoomController', RoomController);
    
-    RoomController.$inject = ['$log', '$location', 'RoomService', 'AppService', 'TripService'];
-    function RoomController($log, $location, RoomService, AppService, TripService) {
+    RoomController.$inject = ['$log', '$location', 'RoomService', 'AppService', 'TripService', 'SeasonService'];
+    function RoomController($log, $location, RoomService, AppService, TripService, SeasonService) {
+        $log.info("Chargement RoomController"); 
         var vm = this;       
-        // Des attributs
-        vm.tab={};
-        vm.tab.items=RoomService.getTabItems();
+        // Des attributs       
         // vm.season=SeasonService
-        vm.season={};
+        vm.season=SeasonService.getSeason(AppService.getCurrentItem());
         vm.home={};
         
         vm.onChangeTabItem = onChangeTabItem;
         vm.getTripDuration = getTripDuration;
-        vm.getTripAveragePrice = getTripAveragePrice;
-        vm.getYearsArray = getYearsArray;        
-
-        function getYearsArray(){
-            return RoomService.getYearsArray();
-        }
+        vm.getTripAveragePrice = getTripAveragePrice;               
 
         function onChangeTabItem(value){
             $log.info("onChangeTabItem on " + value);            

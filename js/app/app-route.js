@@ -8,7 +8,7 @@
     // configuration dun Service de la librairie angular-ui-router   
 
     AppConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
-    function AppConfig($stateProvider, $urlRouterProvider, $httpProvider) {        
+    function AppConfig($stateProvider, $urlRouterProvider, $httpProvider) {
         $httpProvider.interceptors.push(function ($q) {
             return {
                 "request": function (request) {
@@ -35,21 +35,38 @@
             };
         }
         );
-        
+
 
         $stateProvider
-            .state('room', {
+            .state('season', {
                 //parent: 'depot-parent',
-                url: '/room/',
+                url: '/season',
                 views: {
+                    header: {
+                        templateUrl: 'html/nav/nav.html',
+                        controller: 'NavController as vm'
+                    },
                     content: {
                         templateUrl: 'html/room/room.html',
                         controller: 'RoomController as vm'
                     }
                 }
-
-            });            
+            })            
+            .state('home', {
+                //parent: 'depot-parent',
+                url: '/home',
+                views: {
+                    header: {
+                        templateUrl: 'html/nav/nav.html',
+                        controller: 'NavController as vm'
+                    },
+                    content: {
+                        templateUrl: null,
+                        controller: null
+                    }
+                }
+            });
         // route par dfaut, si / alors redirection vers /recherche
-        $urlRouterProvider.otherwise('/room/');
+        $urlRouterProvider.otherwise('/home');
     }
 }(angular));
