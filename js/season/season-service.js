@@ -8,6 +8,7 @@
         service.season = {};
         service.trips=[];
 
+        service.getCurrentSeason=getCurrentSeason;
         service.getSeason = getSeason;
         service.getSeasonJson = getSeasonJson;
         service.getProrata = getProrata;
@@ -24,6 +25,10 @@
             // et si year vide ?
             var uri = "api/trips/" + year;
             return $http.get(uri);
+        }
+
+        function getCurrentSeason(){
+            return service.season;
         }
 
         /**

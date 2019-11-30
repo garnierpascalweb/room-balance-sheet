@@ -47,8 +47,8 @@
                         controller: 'NavController as vm'
                     },
                     content: {
-                        templateUrl: 'html/room/room.html',
-                        controller: 'RoomController as vm'
+                        templateUrl: 'html/season/season.html',
+                        controller: 'SeasonController as vm'
                     }
                 }
             })            
@@ -61,8 +61,8 @@
                         controller: 'NavController as vm'
                     },
                     content: {
-                        templateUrl: null,
-                        controller: null
+                        templateUrl: 'html/home/home.html',
+                        controller: 'HomeController as vm'
                     }
                 }
             });

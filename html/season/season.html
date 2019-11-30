@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-4">
+        <h3>
+            <span class="glyphicon glyphicon-euro"></span>&nbsp;{{vm.season.price.sum}}</h3>
+    </div>
+    <div class="col-sm-4">
+        <h3>
+            <span class="glyphicon glyphicon-calendar"></span>&nbsp;{{vm.season.nbguests}} séjours</h3>
+    </div>
+    <div class="col-sm-4">
+        <h3>
+            <span class="glyphicon glyphicon-bed"></span>&nbsp;{{vm.season.nbnights}} nuitées</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <canvas id="bar" class="chart chart-bar" chart-data="vm.season.price.chart.data" chart-labels="vm.season.price.chart.labels"
+            chart-series="vm.season.price.chart.series" chart-options="vm.season.price.chart.options"></canvas>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="row">
+    <div class="panel-group">
+        <div class="panel panel panel-primary" ng-repeat="trip in vm.season.trips">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-calendar"></span>&nbsp;S&eacute;jour du {{trip.checkin | date:"dd/MM/yyyy"}} au {{trip.checkout | date:"dd/MM/yyyy"}}
+                - {{vm.getTripDuration(trip)}} nuits - {{trip.price}} &euro; ({{vm.getTripAveragePrice(trip)}} &euro; / n)
+                </div>
+            <div class="panel-body">
+                <span class="glyphicon glyphicon-user"></span> Ouls Djoubani Rachid
+                <countryflag country="ae">France</countryflag>
+                voir span
+                <span class="flag-icon flag-icon-ae"></span> fin voir span
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+<pre>{{vm | json }}</pre>
