@@ -18,18 +18,11 @@
         service.logMapElements = logMapElements;
 
         /**
-         * Calls backend to get all trips for a season
-         * @param {*} year 
+         * Gets current season
          */
-        function getSeasonJson(year) {
-            // et si year vide ?
-            var uri = "api/trips/" + year;
-            return $http.get(uri);
-        }
-
         function getCurrentSeason(){
             return service.season;
-        }
+        }               
 
         /**
          * get 
@@ -213,6 +206,17 @@
             }
             return dates;
         }
+
+        /**
+         * protected
+         * Calls backend to get all trips for a season
+         * @param {*} year 
+         */
+        function getSeasonJson(year) {
+            // et si year vide ?
+            var uri = "api/trips/" + year;
+            return $http.get(uri);
+        } 
 
         function logMapElements(valeur, clé, map) {
             $log.info(`map.get('${clé}') = ${value}`);

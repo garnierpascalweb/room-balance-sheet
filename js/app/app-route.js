@@ -49,6 +49,9 @@
                     content: {
                         templateUrl: 'html/season/season.html',
                         controller: 'SeasonController as vm'
+                    },
+                    footer: {
+                        templateUrl: 'html/footer/footer.html'                        
                     }
                 }
             })            
@@ -63,6 +66,9 @@
                     content: {
                         templateUrl: 'html/home/home.html',
                         controller: 'HomeController as vm'
+                    },
+                    footer: {
+                        templateUrl: 'html/footer/footer.html'                        
                     }
                 }
             });
