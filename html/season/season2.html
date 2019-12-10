@@ -1,69 +1,37 @@
-<div class="container-fluid">
-    <div class="row content">            
-      <div class="col-sm-12">
-        <div class="well">
-          <h4>Saison {{vm.season.year}}</h4>
-          <canvas id="bar" class="chart chart-bar" chart-data="vm.season.price.chart.data" chart-labels="vm.season.price.chart.labels"
-                chart-series="vm.season.price.chart.series" chart-options="vm.season.price.chart.options"></canvas>       
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="well">
-              <h4>{{vm.season.price.sum}} Euros</h4>
-              <p>Prix moyen d'une nuit {{vm.season.price.avg}}</p> 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="well">
-              <h4>{{vm.season.nbguests}} Voyageurs</h4>
-              <p>{{vm.season.nbguests.avg}} nuits par s&eacute;jour en moyenne</p> 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="well">
-              <h4>{{vm.season.nights.sum}} Nuitées</h4>
-              <p>Duree moyenne d'un sejour {{vm.season.nights.avg}} </p>             
-            </div>
-          </div>          
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="well">
-              <p>Text</p> 
-              <p>Text</p> 
-              <p>Text</p> 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="well">
-              <p>Text</p> 
-              <p>Text</p> 
-              <p>Text</p> 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="well">
-              <p>Text</p> 
-              <p>Text</p> 
-              <p>Text</p> 
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="well">
-              <p>Text</p> 
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="well">
-              <p>Text</p> 
-            </div>
-          </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <h4>Saison {{vm.season.year}} - Synthèse</h4>
+    <div class="col-sm-4">
+      <div class="well">
+        <h4>{{vm.season.price.sum}} Euros</h4>
+        <p>Prix moyen d'une nuit {{vm.season.price.avg}}</p>
+      </div>
+      <div class="well">
+        <h4>{{vm.season.nbguests}} Voyageurs</h4>
+        <p>{{vm.season.nbguests.avg}} nuits par s&eacute;jour en moyenne</p>
+      </div>
+      <div class="well">
+        <h4>{{vm.season.nights.sum}} Nuitées</h4>
+        <p>Duree moyenne d'un sejour {{vm.season.nights.avg}} </p>
       </div>
     </div>
+    <div class="col-sm-8">
+      <canvas id="bar" class="chart chart-bar" chart-data="vm.season.price.chart.data" chart-labels="vm.season.price.chart.labels"
+        chart-series="vm.season.price.chart.series" chart-options="vm.season.price.chart.options"></canvas>
+    </div>
   </div>
-  
 
-  <pre>{{ vm | json }}</pre>
+  <div class="row">
+    <h4>Saison {{vm.season.year}} - Voyageurs</h4>
+    <div class="col-sm-4" ng-repeat="trip in vm.season.trips">
+      <div class="well">
+        <p><span class="glyphicon glyphicon-calendar"></span>   Du {{trip.checkin}} au {{trip.checkout}}</p>
+        <p><span class="glyphicon glyphicon-user"></span>   Abou Diabi Dembele</p>
+        <p>Text</p>
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+<pre>{{ vm | json }}</pre>
