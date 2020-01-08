@@ -18,8 +18,14 @@
         monthArray[9] = "Oct";
         monthArray[10] = "Nov";
         monthArray[11] = "Dec";
-        service.getMonthName=getMonthName;
 
+        service.getMonthName=getMonthName;
+        
+
+        /**
+         * 
+         * @param {*} number the number of month to retrieve
+         */
         function getMonthName(number){
             return monthArray[number];
         }

@@ -44,14 +44,16 @@
               var fullprice = 0;
               var monthPrices = [];
               var priceByMonthMap = new Map();
+              // for all trips
               for (var index in service.trips) {
                   var trip = service.trips[index];
                   var duration = TripService.getDuration(trip);
                   var price = TripService.getPrice(trip);
                   var checkin = TripService.getCheckIn(trip);
                   var checkout = TripService.getCheckOut(trip);
-  
+                  // increment season full price
                   fullprice += price
+                  // increment season nbnights
                   nbnights += duration;
   
   
@@ -86,15 +88,11 @@
                               priceByMonthMap.set(monthName, priceForCurrentMonth + theprice);
                               $log.info("setting " + monthName + " => " + priceByMonthMap.get(monthName));
                           }
-                      }
-  
-                      $log.info("full price " + price + " prorata " + JSON.stringify(tabProrata) + "");
-  
-  
+                      }                        
                   }
-  
               }
-              service.season.prices = priceByMonthMap;
+              $log.info("priceByMonthMap " + priceByMonthMap);
+              
               service.season.nbnights = nbnights;
               service.season.price = {};
               service.season.price.sum = fullprice;
@@ -106,8 +104,7 @@
               $log.info("season " + JSON.stringify(service.season) + " ");
               $log.info("affichage map " + priceByMonthMap.size);
               for (const entry of priceByMonthMap.entries()) {
-                  $log.info(entry);
-                  $log.info(UtilsService.getMonthName(priceByMonthMap[entry]));
+                  $log.info(entry);                 
               }
               service.season.price.chart = {};
               service.season.price.chart.labels = Array.from(priceByMonthMap.keys());
