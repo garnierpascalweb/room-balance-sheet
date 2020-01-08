@@ -47,7 +47,7 @@
                         controller: 'NavController as vm'
                     },
                     content: {
-                        templateUrl: 'html/season/season2.html',
+                        templateUrl: 'html/season/season.html',
                         controller: 'SeasonController as vm'
                     },
                     footer: {
