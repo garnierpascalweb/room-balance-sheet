@@ -19,7 +19,7 @@
         monthArray[10] = "Nov";
         monthArray[11] = "Dec";
 
-        service.getMonthName=getMonthName;
+        service.getMonthName=getMonthName;        
         
 
         /**

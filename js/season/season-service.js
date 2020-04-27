@@ -2,11 +2,11 @@
     'use strict'; //NOSONAR
     ng.module('season')
         .service('SeasonService', SeasonService);
-    SeasonService.$inject = ['$log', '$http', 'TripService', 'UtilsService'];
-    function SeasonService($log, $http, TripService, UtilsService) {
+    SeasonService.$inject = ['$log', '$http', 'TripService', 'UtilsService', 'LogService'];
+    function SeasonService($log, $http, TripService, UtilsService, LogService) {
         var service = {};
         service.season = {};
-        service.trips=[];
+        
 
         service.getCurrentSeason=getCurrentSeason;
         service.getSeason = getSeason;
@@ -31,7 +31,7 @@
          */
         function getSeason(year) {  
             //service.season = {};
-            //service.trips=[];
+            //service.trips=[];            
             service.season.year=year;     
             getSeasonJson(year)
             .then(
@@ -91,7 +91,8 @@
                       }                        
                   }
               }
-              $log.info("priceByMonthMap " + priceByMonthMap);
+
+              LogService.logMap(priceByMonthMap);
               
               service.season.nbnights = nbnights;
               service.season.price = {};
@@ -117,7 +118,7 @@
               $log.info("fin affichage map " + priceByMonthMap.size);
             },
             function (error) { 
-              $log.info("response ko");
+              $log.info("response ko");              
             }
             ).finally(
 
@@ -212,6 +213,7 @@
         function getSeasonJson(year) {
             // et si year vide ?
             var uri = "api/trips/" + year;
+            // var uri = "js/season/" + year + ".json";
             return $http.get(uri);
         } 
 
