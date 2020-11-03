@@ -417,6 +417,40 @@
                     }
                 ]
             ); 
+            $httpBackend.whenGET(match('api/trips/2020')).respond(
+                [
+                    {
+                        "checkin": "2020-07-25",
+                        "checkout": "2020-08-01",
+                        "price": 342,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-08-02",
+                        "checkout": "2020-08-23",
+                        "price": 1103,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-08-24",
+                        "checkout": "2020-08-31",
+                        "price": 325,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-09-06",
+                        "checkout": "2020-09-14",
+                        "price": 310,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-09-14",
+                        "checkout": "2020-09-24",
+                        "price": 359,
+                        "platform": "Airbnb"
+                    },
+                ]
+            );
             $httpBackend.whenGET(match('api/trips')).respond(
                 [
                     {
@@ -789,6 +823,36 @@
                         "checkin": "2019-10-23",
                         "checkout": "2019-11-02",
                         "price": 324,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-07-25",
+                        "checkout": "2020-08-01",
+                        "price": 342,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-08-02",
+                        "checkout": "2020-08-23",
+                        "price": 1103,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-08-24",
+                        "checkout": "2020-08-31",
+                        "price": 325,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-09-06",
+                        "checkout": "2020-09-14",
+                        "price": 310,
+                        "platform": "Airbnb"
+                    },
+                    {
+                        "checkin": "2020-09-14",
+                        "checkout": "2020-09-24",
+                        "price": 359,
                         "platform": "Airbnb"
                     }
                 ]
